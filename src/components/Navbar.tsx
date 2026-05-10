@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
