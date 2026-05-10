@@ -1,36 +1,156 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DG Web Studio
 
-## Getting Started
+Diseño web moderno para negocios locales.
 
-First, run the development server:
+![DG Web Studio](./public/og-image.jpg)
+
+---
+
+## 🚀 Proyecto
+
+DG Web Studio es una web portfolio profesional desarrollada con tecnologías modernas para ofrecer servicios de diseño y desarrollo web orientados a pequeños negocios locales.
+
+La web está enfocada en:
+- transmitir confianza
+- diseño moderno
+- alto rendimiento
+- experiencia premium
+- captación de clientes
+- SEO local
+
+---
+
+## ✨ Características
+
+- Diseño moderno y minimalista
+- Responsive mobile-first
+- Optimización SEO avanzada
+- Formularios funcionales con Resend
+- Integración de correo profesional
+- Animaciones suaves con Framer Motion
+- Optimización de imágenes
+- Lighthouse optimizado
+- Metadata avanzada
+- Open Graph + Twitter Cards
+- Schema.org Structured Data
+- Sitemap dinámico
+- Robots.txt automático
+- Integración con Google Search Console
+- Deploy profesional en Vercel
+
+---
+
+## 🛠️ Stack Tecnológico
+
+- Next.js 15
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Resend
+- Vercel
+- Cloudflare
+- Zoho Mail
+
+---
+
+## 📂 Estructura del proyecto
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+src/
+ ├── app/
+ │   ├── api/
+ │   ├── layout.tsx
+ │   ├── page.tsx
+ │   ├── sitemap.ts
+ │   └── robots.ts
+ │
+ ├── components/
+ │   ├── Navbar.tsx
+ │   ├── Hero.tsx
+ │   ├── Services.tsx
+ │   ├── Portfolio.tsx
+ │   ├── CTA.tsx
+ │   ├── Contact.tsx
+ │   └── Footer.tsx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 💼 Servicios
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Diseño web corporativo
+- Landing pages
+- Modernización de páginas antiguas
+- SEO local básico
+- Optimización móvil
+- Formularios y automatización
+- Integración WhatsApp
+- Soporte y mantenimiento
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📸 Proyectos incluidos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Clínica Dental Gómez Rozas
+- Nos Pilates
+- Mary Groom
+- Teyca Sabadell
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## ⚡ Rendimiento
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+La web está optimizada para:
+- velocidad de carga
+- experiencia móvil
+- SEO técnico
+- accesibilidad
+- rendimiento visual
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🌍 Dominio y correo profesional
+
+- Dominio personalizado con Cloudflare
+- Correo profesional con Zoho Mail
+- Envío de formularios mediante Resend
+
+---
+
+## 📈 SEO
+
+Incluye:
+- Open Graph
+- Twitter Cards
+- Schema.org
+- Sitemap.xml
+- Robots.txt
+- Metadata avanzada
+- Keywords locales
+
+---
+
+## 📬 Contacto
+
+📧 contacto@dg-webstudio.com
+
+📱 +34 628 247 900
+
+🌐 https://dg-webstudio.com
+
+---
+
+## 🚀 Deploy
+
+El proyecto está desplegado en:
+
+### https://dg-webstudio.com
+
+---
+
+## 📄 Licencia
+
+Proyecto desarrollado por David García.
+
+Todos los derechos reservados.
