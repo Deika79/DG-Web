@@ -7,7 +7,55 @@ import {
   MessageCircle,
 } from "lucide-react";
 
+import { useState } from "react";
+
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+
+  const [success, setSuccess] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  async function handleSubmit(
+    e: React.FormEvent<HTMLFormElement>
+  ) {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSuccess(true);
+
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+    setLoading(false);
+  }
+
   return (
     <section
       id="contacto"
@@ -25,12 +73,12 @@ export default function Contact() {
               Contacto
             </span>
 
-            <h2 className="text-4xl font-black leading-tight text-slate-900 md:text-5xl">
+            <h2 className="text-4xl font-black leading-tight text-slate-950 md:text-5xl">
               Hablemos sobre tu próxima web
             </h2>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
-              Si necesitas una página web moderna, rápida y profesional
+              Si necesitas una web moderna, rápida y profesional
               para tu negocio, puedes escribirme sin compromiso.
             </p>
 
@@ -101,9 +149,12 @@ export default function Contact() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm"
+            className="soft-shadow rounded-[2rem] border border-white/50 bg-white p-8"
           >
-            <form className="space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
               <div>
                 <label className="mb-2 block text-sm font-medium text-slate-700">
                   Nombre
@@ -111,7 +162,15 @@ export default function Contact() {
 
                 <input
                   type="text"
+                  required
                   placeholder="Tu nombre"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      name: e.target.value,
+                    })
+                  }
                   className="w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none transition focus:border-blue-500"
                 />
               </div>
@@ -123,7 +182,15 @@ export default function Contact() {
 
                 <input
                   type="email"
+                  required
                   placeholder="tu@email.com"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      email: e.target.value,
+                    })
+                  }
                   className="w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none transition focus:border-blue-500"
                 />
               </div>
@@ -135,17 +202,34 @@ export default function Contact() {
 
                 <textarea
                   rows={6}
+                  required
                   placeholder="Necesito una web para mi negocio..."
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      message: e.target.value,
+                    })
+                  }
                   className="w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none transition focus:border-blue-500"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full rounded-2xl bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
+                disabled={loading}
+                className="w-full rounded-2xl bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700 disabled:opacity-70"
               >
-                Solicitar presupuesto
+                {loading
+                  ? "Enviando..."
+                  : "Solicitar presupuesto"}
               </button>
+
+              {success && (
+                <div className="rounded-2xl bg-green-100 px-5 py-4 text-sm font-medium text-green-700">
+                  ¡Mensaje enviado correctamente! Te responderé lo antes posible.
+                </div>
+              )}
             </form>
           </motion.div>
         </div>
