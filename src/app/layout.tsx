@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+
 import "./globals.css";
 
 const geist = Geist({
@@ -18,14 +20,19 @@ export const metadata: Metadata = {
     "Diseño páginas web modernas, rápidas y profesionales para negocios locales. Webs corporativas, landing pages, SEO local y modernización web.",
 
   keywords: [
-    "diseño web",
-    "desarrollador web freelance",
-    "webs para negocios locales",
+    "diseño web madrid",
+    "desarrollador web freelance madrid",
+    "diseño web para negocios locales",
+    "páginas web para empresas",
     "landing pages",
     "seo local",
-    "diseño web madrid",
-    "diseño web españa",
-    "next.js",
+    "modernización web",
+    "diseño web profesional",
+    "next.js developer",
+    "diseñador web freelance",
+    "webs para restaurantes",
+    "webs para clínicas",
+    "webs corporativas",
   ],
 
   authors: [
@@ -44,6 +51,7 @@ export const metadata: Metadata = {
     description:
       "Diseño páginas web modernas para negocios locales.",
     siteName: "DG Web Studio",
+
     images: [
       {
         url: "/og-image.jpg",
@@ -77,6 +85,38 @@ export default function RootLayout({
     <html lang="es">
       <body className={geist.className}>
         {children}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+
+              name: "DG Web Studio",
+
+              image: "https://dg-webstudio.com/og-image.jpg",
+
+              url: "https://dg-webstudio.com",
+
+              telephone: "+34628247900",
+
+              email: "contacto@dg-webstudio.com",
+
+              areaServed: "España",
+
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "ES",
+              },
+
+              description:
+                "Diseño web moderno para negocios locales.",
+            }),
+          }}
+        />
+
+        <Analytics />
       </body>
     </html>
   );
